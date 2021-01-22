@@ -1,0 +1,88 @@
+// НАША КОМАНДА
+.team-panel {
+  background-color: $box-background-color;
+}
+
+.team-panel .list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.member-card:not(:last-child) {
+  margin-right: 30px;
+}
+
+.team-panel .card-container {
+  background: $white-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  padding-bottom: 30px;
+}
+
+.member-img {
+  margin-bottom: 30px;
+}
+
+.cards-name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.cards-description {
+  font-size: 16px;
+  line-height: 1.19;
+  color: $description-color;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+// НАША КОМАНДА СОЦ ИКОНКИ
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-link {
+  @extend %flex-row;
+  width: 44px;
+  height: 44px;
+  color: $icons-color;
+  background-color: $white-color;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-color 250ms $time-step;
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  &:hover .social-instagram,
+  &:focus .social-instagram,
+  &:hover .social-twitter,
+  &:focus .social-twitter,
+  &:hover .social-facebook,
+  &:focus .social-facebook,
+  &:hover .social-linkedin,
+  &:focus .social-linkedin {
+  fill: $white-color;
+  }
+  }
+}
+
+.social-instagram,
+.social-twitter,
+.social-facebook,
+.social-linkedin {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  transition: fill 250ms $time-step;
+}

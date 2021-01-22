@@ -1,0 +1,47 @@
+// ЧЕМ МЫ ЗАНИМАЕМСЯ
+.work-model {
+  margin-top: 0px;
+}
+
+// заголовок секции (#2-#3)
+.section-title {
+  font-weight: $boldFontWeight;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+
+.section-title::first-letter {
+  text-transform: uppercase;
+}
+
+// рабочие макеты
+.work-topic {
+  display: flex;
+  padding-bottom: 94px;
+}
+
+.work-topic .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.work-topic .item {
+  position: relative;
+}
+
+.img-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-weight: $boldFontWeight;
+  line-height: 1.142;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white-color;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  background: $overlay-color;
+}

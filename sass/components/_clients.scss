@@ -1,0 +1,62 @@
+// ПОСТОЯННЫЕ КЛИЕНТЫ
+.clients-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.client-link {
+  @extend %flex-row;
+  color: $icons-color;
+  border: 1px solid $icons-color;
+  border-radius: 4px;
+  width: 170px;
+  height: 90px;
+  transition: border-color 250ms $time-step;
+&:hover,
+&:focus {
+  border: 1px solid $accent-color;
+}
+}
+
+.icons-client {
+  fill: currentColor;
+  transition: fill 250ms $time-step;
+}
+
+.icons-logo {
+  &-1 {
+  width: 44.27px;
+  height: 49.23px;
+}
+  &-2 {
+  width: 40px;
+  height: 52px;
+}
+  &-3 {
+  width: 41px;
+  height: 42.6px;
+}
+  &-4 {
+  width: 79.66px;
+  height: 42.02px;
+}
+  &-5 {
+  width: 59px;
+  height: 47px;
+}
+  &-6 {
+  width: 88.48px;
+  height: 45.44px;
+}
+}
+
+.client-link {
+  &:hover .icons-client,
+  &:focus .icons-client {
+    fill: $accent-color;
+  }
+}

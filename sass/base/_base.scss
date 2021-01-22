@@ -1,0 +1,43 @@
+// УТИЛИТЫ 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: $title-text-color;
+  background-color: $white-color;
+  font-family: $mainFont;
+  font-style: $mainFontStyle;
+  font-weight: $mainFontWeight;
+  font-size: $mainFontSize;
+  letter-spacing: $mainLetterSpacing;
+}
+
+.list {
+  list-style: none;
+}
+
+h2,
+h3 {
+  color: $title-text-color;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0000);
+  overflow: hidden;
+}

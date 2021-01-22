@@ -1,0 +1,21 @@
+//ЛОГОТИП 
+.logotype {
+  display: inline-block;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  color: $accent-color;
+  text-decoration: none;
+  font-family: $logoFont;
+  font-weight: $boldFontWeight;
+  font-size: 26px;
+  line-height: 1.19;
+}
+
+.logotype-style {
+  color: $title-text-color;
+  text-decoration: none;
+  font-family: $logoFont;
+  font-weight: $boldFontWeight;
+  font-size: 26px;
+  line-height: 1.19;
+}

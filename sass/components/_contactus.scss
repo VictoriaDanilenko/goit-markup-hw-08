@@ -1,0 +1,52 @@
+// СВЯЗАТЬСЯ С НАМИ
+.contact-us {
+  display: inline-flex;
+  margin-left: auto;
+  vertical-align: bottom;
+}
+
+/* СВЯЗАТЬСЯ С НАМИ - ИКОНКИ  */
+.mail-icon {
+  @include contact-icons(16px, 12px);
+}
+
+.smartphone-icon {
+  @include contact-icons(10px, 16px);
+}
+
+.mail {
+&:hover .mail-icon,
+&:focus .mail-icon {
+  fill: $accent-color;
+}
+}
+
+.smartphone {
+  &:hover .smartphone-icon,
+  &:focus .smartphone-icon {
+    fill: $accent-color;
+  }
+}
+
+//СВЯЗАТЬСЯ С НАМИ - ССЫЛКИ 
+.contact-us a {
+  display: inline-flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: $description-color;
+  text-decoration: none;
+  font-style: $mainFontStyle;
+  font-weight: 500;
+  line-height: 1.172;
+  letter-spacing: 0.02em;
+  transition: color 250ms $time-step;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+
+.contact-us .item:not(:last-child) {
+  margin-right: 50px;
+}

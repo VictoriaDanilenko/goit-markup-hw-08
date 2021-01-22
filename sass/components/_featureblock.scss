@@ -1,0 +1,44 @@
+// НАШИ ОСОБЕННОСТИ-ИКОНКИ
+.feature-box {
+  @extend %flex-row;
+  height: 120px;
+  border-radius: 4px;
+  background-color: $box-background-color;
+  margin-bottom: 30px;
+}
+
+.box-icon {
+  width: 70px;
+  height: 70px;
+}
+
+// НАШИ ОСОБЕННОСТИ
+.box {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.feature-topic {
+  display: flex;
+}
+
+.feature-topic .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.feature-topic .title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: $boldFontWeight;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $title-text-color;
+}
+
+.feature-topic .text {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 270px;
+  line-height: 1.71;
+  color: $description-color;
+}

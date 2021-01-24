@@ -1,88 +1,101 @@
 // НАША КОМАНДА
-.team-panel {
-  background-color: $box-background-color;
+.team-block {
+  background-color: $secondary-background-color;
+  padding: 60px 0;
+
+  @media screen and (min-width: 1200px) {
+    padding: 94px 0;
+  }
 }
 
-.team-panel .list {
+.team-block__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+  }
 }
 
-.member-card:not(:last-child) {
-  margin-right: 30px;
+.team-block__item {
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
+  }
 }
 
-.team-panel .card-container {
-  background: $white-color;
+.team-block__card-container {
+  background: $primary-background-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   padding-bottom: 30px;
 }
 
-.member-img {
+.team-block__img-block {
+  display: block;
   margin-bottom: 30px;
 }
 
-.cards-name {
+.team-block__title {
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.19;
+  line-height: 1.18;
+  text-align: center;
+  text-transform: capitalize;
   margin-bottom: 10px;
-  text-align: center;
 }
 
-.cards-description {
+.team-block__post {
+  color: $secondary-text-color;
   font-size: 16px;
-  line-height: 1.19;
-  color: $description-color;
-  margin-bottom: 16px;
+  line-height: 1.18;
   text-align: center;
+  margin-bottom: 16px;
 }
 
-// НАША КОМАНДА СОЦ ИКОНКИ
-.social-list {
+.team-block__social-list {
   list-style: none;
   display: flex;
   justify-content: center;
 }
 
-.social-item:not(:last-child) {
+.team-block__social-item:not(:nth-child(4)) {
   margin-right: 10px;
 }
 
-.social-link {
+.team-block__employee-link {
   @extend %flex-row;
   width: 44px;
   height: 44px;
-  color: $icons-color;
+  color: $secondary-text-color;
   background-color: $white-color;
   border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center;
-  transition: background-color 250ms $time-step;
+  transition: background-color 250ms $timing-func;
+
   &:hover,
   &:focus {
     background-color: $accent-color;
-  &:hover .social-instagram,
-  &:focus .social-instagram,
-  &:hover .social-twitter,
-  &:focus .social-twitter,
-  &:hover .social-facebook,
-  &:focus .social-facebook,
-  &:hover .social-linkedin,
-  &:focus .social-linkedin {
-  fill: $white-color;
-  }
   }
 }
 
-.social-instagram,
-.social-twitter,
-.social-facebook,
-.social-linkedin {
+.team-block__employee-icon {
   width: 20px;
   height: 20px;
   fill: currentColor;
-  transition: fill 250ms $time-step;
+  transition: fill 250ms $timing-func;
+}
+
+.team-block__employee-link:hover .team-block__employee-icon,
+.team-block__employee-link:focus .team-block__employee-icon {
+  fill: $white-color;
 }

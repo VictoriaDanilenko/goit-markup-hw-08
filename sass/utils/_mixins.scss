@@ -1,7 +1,0 @@
-@mixin contact-icons($width, $height) {
-  width: $width;
-  height: $height;
-  margin-right: 10px;
-  fill: $description-color;
-  transition: fill 250ms $time-step
-}

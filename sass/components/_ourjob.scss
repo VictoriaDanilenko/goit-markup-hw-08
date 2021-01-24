@@ -1,47 +1,32 @@
 // ЧЕМ МЫ ЗАНИМАЕМСЯ
-.work-model {
-  margin-top: 0px;
-}
-
-// заголовок секции (#2-#3)
-.section-title {
-  font-weight: $boldFontWeight;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  margin-top: 0px;
-  margin-bottom: 50px;
-}
-
-.section-title::first-letter {
-  text-transform: uppercase;
-}
-
-// рабочие макеты
-.work-topic {
-  display: flex;
+.our-job {
   padding-bottom: 94px;
+  display: none;
+
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
 }
 
-.work-topic .item:not(:last-child) {
-  margin-right: 30px;
+.our-job__list {
+  display: flex;
+  justify-content: space-between;
 }
 
-.work-topic .item {
+.our-job__item {
   position: relative;
 }
 
-.img-overlay {
+.our-job__img-overlay {
   position: absolute;
   bottom: 0;
-  right: 0;
   left: 0;
-  font-weight: $boldFontWeight;
-  line-height: 1.142;
+  right: 0;
+  padding: 27px 0;
+  background-color: $overlay-bg-color;
+  font-weight: 700;
+  line-height: 1.14;
   text-align: center;
   text-transform: uppercase;
   color: $white-color;
-  padding-top: 27px;
-  padding-bottom: 27px;
-  background: $overlay-color;
 }

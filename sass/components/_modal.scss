@@ -7,51 +7,70 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 250ms $time-step;
-}
+  transition: opacity 250ms $timing-func;
+  overflow-y: scroll;
 
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
 
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.9);
+    .modal {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
 }
 
 .modal {
   position: absolute;
-  top: 50%;
+  top: 50px;
   left: 50%;
-  min-height: 581px;
-  width: 528px;
+  width: calc(100% - 30px);
   background-color: $white-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
   padding: 40px;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms $time-step;
+  transform: translatex(-50%) scale(1);
+  transition: transform 250ms $timing-func;
+
+  @media screen and (min-width: 480px) {
+    width: 450px;
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 70px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
-.form-modal {
+.form {
   width: 100%;
 }
 
-.form-title {
-  font-weight: $boldFontWeight;
+.form__title {
+  font-weight: 700;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   text-align: center;
-  color: $title-text-color;
+  color: $primary-text-color;
   margin-bottom: 12px;
+
+  @media screen and (min-width: 1200px) {
+    line-height: 1.15;
+  }
 }
 
-.form-field {
+.form__field {
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
 }
 
-.input-icon {
+.form__icon-block {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -61,90 +80,98 @@
   margin-bottom: 20px;
 }
 
-.label {
+.form__label {
   margin-bottom: 4px;
-  font-family: $mainFont;
   font-size: 12px;
-  line-height: 1.171;
+  line-height: 1.16;
   letter-spacing: 0.01em;
-  color: $description-color;
-  cursor: pointer;
+  color: $secondary-text-color;
 }
 
-.input {
+.form__input {
   margin: 0;
   padding: 11px 12px;
   height: 40px;
   border: 1px solid $input-border-color;
   border-radius: 4px;
-  font-size: $mainFontSize;
+  font-size: 14px;
   line-height: 1.16;
   letter-spacing: 0.01em;
   padding-left: 42px;
   outline: none;
+
+  &:focus {
+    border: 1px solid $accent-color;
+  }
 }
 
-.input:focus {
-  border: 1px solid $accent-color;
-}
-
-.form-icon {
+.form__icon {
   position: absolute;
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
+  fill: $primary-text-color;
+  width: 18px;
+  height: 18px;
 }
 
-.input:focus~.form-icon {
+.form__input:focus~.form__icon {
   fill: $accent-color;
 }
 
-.textarea {
+.form__textarea {
   resize: none;
   height: 120px;
   padding: 12px 16px;
   border: 1px solid $input-border-color;
   border-radius: 4px;
   outline: none;
-}
 
-.textarea:focus {
-  border: 1px solid $accent-color;
-}
+  &:focus {
+    border: 1px solid $accent-color;
+  }
 
-.textarea::placeholder {
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
-  color: $form-text-color;
+  &::placeholder {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: $form-text-color;
+  }
 }
 
 .checkbox-field {
   margin-bottom: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
 }
 
 .label-rules {
   display: flex;
   align-items: center;
-  font-size: $mainFontSize;
+  margin-bottom: 4px;
+  font-size: 12px;
   line-height: 1.71;
-  letter-spacing: $mainLetterSpacing;
-}
+  letter-spacing: 0.03em;
+  color: $secondary-text-color;
 
-.label-rules a {
-  color: $accent-color;
-  text-decoration: underline;
-}
+  @media screen and (max-width: 479px) {
+    flex-wrap: wrap;
+  }
 
-.label-rules a:visited {
-  color: $accent-color;
-  text-decoration: underline;
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
+
+  a,
+  a:visited {
+    color: $accent-color;
+    text-decoration: underline;
+  }
 }
 
 .checkbox {
@@ -161,7 +188,7 @@
 .icon-checkbox {
   width: 16px;
   height: 15px;
-  border: 2px solid $description-color;
+  border: 2px solid $primary-text-color;
   border-radius: 2px;
   margin-right: 7px;
 }
@@ -169,19 +196,11 @@
 .checkbox:checked+.icon-checkbox {
   background-color: $accent-color;
   border: 2px solid $accent-color;
-  background-image: url('../images/icons/done.svg');
+  background-image: url('../images/icons/icon_check.svg');
   background-origin: border-box;
-  background-repeat: no-repeat;
-  background-size: contain;
-  cursor: pointer;
-  background-position: 50% 50%;
 }
 
-.space {
-  padding-left: 5px;
-}
-
-.btn-submit {
+.form__btn-submit {
   display: block;
   margin: 0 auto;
   width: 200px;
@@ -192,21 +211,18 @@
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   font-size: 16px;
-  /* line-height: 1.87; */
-  font-weight: $boldFontWeight;
+  line-height: 1.87;
+  font-weight: 700;
   letter-spacing: 0.06em;
   color: $white-color;
-  transition: background-color 250ms $time-step;
-  outline: none;
-  cursor: pointer;
-  &:hover {
-    background-color: $btn-submit;
-  }
+  transition: background-color 250ms $timing-func;
 
+  &:hover {
+    background-color: $btn-submit-hover;
+  }
 }
 
-
-.btn-close {
+.form__btn-close {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -217,12 +233,9 @@
   background-color: $white-color;
   cursor: pointer;
   outline: none;
-  &:hover .icon-close {
-    fill: $accent-color;
-  }
 }
 
-.icon-close {
+.form__icon-close {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -230,5 +243,8 @@
   width: 18px;
   height: 18px;
   fill: #000000;
-  transition: fill 250ms $time-step;
+  transition: fill 250ms $timing-func;
+  &:hover {
+    fill: $accent-color;
+  }
 }

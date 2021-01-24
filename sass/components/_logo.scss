@@ -1,21 +1,38 @@
 //ЛОГОТИП 
-.logotype {
-  display: inline-block;
-  padding-top: 24px;
-  padding-bottom: 25px;
-  color: $accent-color;
-  text-decoration: none;
-  font-family: $logoFont;
-  font-weight: $boldFontWeight;
-  font-size: 26px;
-  line-height: 1.19;
-}
+.logo-container {
+  &--centred {
+    text-align: center;
+    margin-bottom: 20px;
 
-.logotype-style {
-  color: $title-text-color;
-  text-decoration: none;
-  font-family: $logoFont;
-  font-weight: $boldFontWeight;
-  font-size: 26px;
-  line-height: 1.19;
+    @media screen and (min-width: 1200px) {
+      text-align-last: left;
+    }
+  }
+
+  &__link {
+    color: $primary-text-color;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 1.2;
+    text-decoration: none;
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @media screen and (min-width: 768px) {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    span {
+      color: $accent-color;
+    }
+
+    &--inverse {
+      color: $white-color;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
 }
